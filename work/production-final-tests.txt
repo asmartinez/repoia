@@ -1,0 +1,28 @@
+✔ public mixed-type retrieval is unfiltered, validates total and preserves paging (2.716292ms)
+✔ 403 and HTML failures are not zero results and circuit blocks repeated calls (1.013583ms)
+✔ missing total cannot silently become zero (0.371916ms)
+✔ stats use blank query and explicit scope, with production-history caveat (11.630583ms)
+✔ reject facet ranking if order is not count descending (0.438959ms)
+✔ intent search calls catalog, answers are grounded in canonical records and filter invented IDs (2.39625ms)
+✔ conversation and clarification make no catalog request (0.81875ms)
+✔ follow-up uses verified server record, not client-supplied metadata (0.370959ms)
+✔ signed pagination cannot be modified or moved to another visitor (0.818125ms)
+✔ validation bounds messages and history (0.180541ms)
+✔ persistent counter refuses excess calls without resetting on reconnect (0.131583ms)
+{"event":"request","id":"46d7bf81-64ae-44d6-a621-33839d6ba916","status":200,"code":"ok","durationMs":2}
+{"event":"request","id":"016ab516-47c1-49c0-9294-097ee6a62f6c","status":403,"code":"forbidden","durationMs":0}
+{"event":"request","id":"d320bf2d-65cf-4c28-8758-c258564626d9","status":404,"code":"not_found","durationMs":0}
+{"event":"request","id":"9680743c-e2bc-42d4-b095-814a6c71746c","status":200,"code":"ok","durationMs":1}
+{"event":"request","id":"efad44a6-1a0c-4038-bbf3-2a2c785c2d0d","status":200,"code":"ok","durationMs":1}
+✔ HTTP prefix, CSRF, no public model endpoints, security headers and safe errors (25.323375ms)
+✔ Gemini daily cap stops before sending an upstream request (0.227708ms)
+✔ quota counters survive separate process restarts (149.936209ms)
+✔ production startup refuses missing trusted proxy configuration (98.264542ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 421.659625

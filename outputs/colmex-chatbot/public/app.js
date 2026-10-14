@@ -1,0 +1,75 @@
+const input=document.querySelector('#query'),form=document.querySelector('#search'),view=document.querySelector('#conversation'),status=document.querySelector('#status'),button=document.querySelector('#submit');
+let csrf,selectedId,language='es',history=[],busy=false,current;
+const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
+const words=(es,en,fr)=>language.startsWith('en')?en:language.startsWith('fr')?fr:es;
+function link(url,text,cls='source'){const u=new URL(url);if(u.origin!=='https://repositorio.colmex.mx')throw Error('Invalid source');const a=el('a',text,cls);a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';return a;}
+let accordionNumber=0;
+function metadataList(record){
+ const names=words({id:'Identificador',type:'Tipo de material',title:'Título',creators:'Autoría',year:'Fecha',publisher:'Publicación',language:'Idioma',extent:'Extensión',edition:'Edición',subject:'Temas',geography:'Cobertura geográfica',description:'Resumen',contents:'Contenido',isbn:'ISBN',collections:'Colecciones',themes:'Colecciones temáticas',access:'Restricciones de acceso',metadataTruncated:'Metadatos abreviados'}, {id:'Identifier',type:'Material type',title:'Title',creators:'Creators',year:'Date',publisher:'Publication',language:'Language',extent:'Extent',edition:'Edition',subject:'Subjects',geography:'Geographic coverage',description:'Description',contents:'Contents',isbn:'ISBN',collections:'Collections',themes:'Thematic collections',access:'Access restrictions',metadataTruncated:'Metadata shortened'}, {id:'Identifiant',type:'Type de document',title:'Titre',creators:'Auteurs',year:'Date',publisher:'Publication',language:'Langue',extent:'Étendue',edition:'Édition',subject:'Sujets',geography:'Couverture géographique',description:'Résumé',contents:'Sommaire',isbn:'ISBN',collections:'Collections',themes:'Collections thématiques',access:'Restrictions d’accès',metadataTruncated:'Métadonnées abrégées'});
+ const dl=el('dl',undefined,'metadata');for(const [key,value] of Object.entries(record)){if(!value||['link','contextToken','metadata'].includes(key)||Array.isArray(value)&&!value.length)continue;const row=el('div');row.append(el('dt',names[key]||key),el('dd',Array.isArray(value)?value.join('; '):String(value)));dl.append(row);}for(const [key,f] of Object.entries(record.metadata||{})){const row=el('div');row.append(el('dt',(f.label||key)+' ('+key+')'),el('dd',f.values.join('; ')));if(f.ambiguity&&key!=='date_created')row.append(el('dd',words('Definición ambigua: ','Ambiguous definition: ','Définition ambiguë : ')+f.ambiguity));dl.append(row);}return dl;
+}
+function renderRecord(record,metadata=false,explanation){
+ const n=el('div',undefined,'book');n.dataset.id=record.id;
+ n.append(link(record.link,record.title,'title'),el('p',[record.type,record.creators?.join('; '),record.year,record.extent].filter(Boolean).join(' · '),'byline'));
+ if(explanation)n.append(el('p',explanation,'answer record-explanation'));
+ const labels=words(['Metadatos','Materiales similares'],['Metadata','Related materials'],['Métadonnées','Documents similaires']);
+ const actions=el('div',undefined,'actions'),panels=[];n.append(actions);
+ function section(label,build){
+  const b=el('button',label);b.type='button';const panel=el('div',undefined,'record-panel');panel.id='record-panel-'+(++accordionNumber);panel.hidden=true;panel.setAttribute('role','region');panel.setAttribute('aria-label',label);b.setAttribute('aria-controls',panel.id);b.setAttribute('aria-expanded','false');
+  b.onclick=()=>{const open=panel.hidden;for(const pair of panels){pair.panel.hidden=true;pair.button.setAttribute('aria-expanded','false');}panel.hidden=!open;b.setAttribute('aria-expanded',String(open));};build(panel);actions.append(b);n.append(panel);panels.push({button:b,panel});return {button:b,panel};
+ }
+ const meta=section(labels[0],panel=>panel.append(metadataList(record)));
+ section(labels[1],panel=>{
+  panel.append(el('p',words('Buscar materiales similares abrirá una nueva lista y sustituirá estos resultados.','Finding related materials will open a new list and replace these results.','Rechercher des documents similaires ouvrira une nouvelle liste et remplacera ces résultats.'),'answer'));
+  const go=el('button',words('Buscar materiales similares','Find related materials','Rechercher des documents similaires'),'more');go.type='button';go.onclick=()=>send('Find related materials.',record.id,true,labels[1]);
+  const cancel=el('button',words('Cancelar','Cancel','Annuler'),'more');cancel.type='button';cancel.onclick=()=>{for(const pair of panels){pair.panel.hidden=true;pair.button.setAttribute('aria-expanded','false');}};const row=el('div',undefined,'actions');row.append(go,cancel);panel.append(row);
+ });
+ actions.append(link(record.link,words('Ver en el repositorio ↗','View in repository ↗','Voir dans le dépôt ↗'),'repository-action'));
+ if(metadata){meta.panel.hidden=false;meta.button.setAttribute('aria-expanded','true');}
+ return n;
+}
+
+async function post(path,data){
+ if(!csrf){const r=await fetch('/chatbot/api/session');if(!r.ok)throw Error('No se pudo iniciar la sesión.');csrf=(await r.json()).csrf;}
+ const r=await fetch('/chatbot/api/'+path,{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':csrf,'Accept-Language':navigator.language},body:JSON.stringify(data),signal:AbortSignal.timeout(145000)});
+ const d=await r.json();if(!r.ok)throw Error(d.error||'No se pudo completar la consulta.');return d;
+}
+function appendRecords(state,records,explanations=[]){const descriptions=new Map(explanations.map(e=>[e.id,e.text]));for(const r of records){if(state.records.has(r.id))continue;state.records.set(r.id,r);state.list.append(renderRecord(r,false,descriptions.get(r.id)||r.description?.join('\n\n')||words('El catálogo no proporciona un resumen de este material.','The catalog does not provide a summary of this material.','Le catalogue ne fournit pas de résumé de ce document.')));}state.count.textContent=state.total==null?words(`${state.records.size} resultados únicos mostrados; total único no confirmado.`,`${state.records.size} unique results displayed; unique total unconfirmed.`,`${state.records.size} résultats uniques affichés ; total unique non confirmé.`):words(`${state.records.size} resultados mostrados de ${state.total}.`,`${state.records.size} results displayed of ${state.total}.`,`${state.records.size} résultats affichés sur ${state.total}.`);}
+function renderDiscovery(discovery,state){
+ const n=el('section',undefined,'discovery');n.setAttribute('aria-label',words('Panorama de resultados','Results overview','Vue des résultats'));
+ if(discovery.types?.length)n.append(el('p',words('Tipos de material encontrados: ','Material types found: ','Types de documents trouvés : ')+discovery.types.map(t=>t.label+(t.total!=null?` (${t.total})`:'')).join(' · '),'byline'));
+ if(discovery.groups?.length){n.append(el('h2',words('Explore estos conjuntos','Explore these groups','Explorez ces ensembles')));const grid=el('div',undefined,'group-grid');
+ for(const g of discovery.groups){const card=el('div',undefined,'group-card');card.append(el('p',g.kind==='thematic'?words('Colección temática','Thematic collection','Collection thématique'):words('Colección','Collection','Collection'),'group-kind'),el('h3',g.label));
+ const count=g.total!=null?words(`${g.total.toLocaleString('es-MX')} coincidencias con su búsqueda`,`${g.total.toLocaleString('en')} matches for your search`,`${g.total.toLocaleString('fr')} correspondances pour votre recherche`):g.counts.map(c=>words(`Búsqueda ${c.searchIndex}: ${c.total} coincidencias`,`Search ${c.searchIndex}: ${c.total} matches`,`Recherche ${c.searchIndex} : ${c.total} correspondances`)).join(' · ');
+ card.append(el('p',count));const explore=el('button',words('Explorar estos materiales','Explore these materials','Explorer ces documents'),'more');explore.type='button';explore.onclick=()=>send(words('Explore este conjunto conservando mi búsqueda.','Explore this group while preserving my search.','Explorez cet ensemble en conservant ma recherche.'),undefined,true,state.question+' — '+g.label,g.token);card.append(explore);grid.append(card);}
+ n.append(grid);}
+ n.append(el('p',words('Los conjuntos pueden solaparse y no se suman. A continuación se muestra una selección variada de ejemplos, no un inventario completo.','Groups can overlap and their counts are not added. Below is a varied selection of examples, not a complete inventory.','Les ensembles peuvent se recouper et leurs nombres ne sont pas additionnés. Une sélection variée suit, et non un inventaire complet.'),'panel-note'));
+ if(discovery.partial)n.append(el('p',words('El panorama es parcial: no se pudo consultar alguno de los conjuntos.','The overview is partial: some group queries were unavailable.','La vue est partielle : certaines recherches étaient indisponibles.'),'panel-note'));
+ return n;
+}
+function controls(state){
+ state.tools.replaceChildren();const add=(label,handler)=>{const b=el('button',label,'more');b.type='button';b.onclick=handler;state.tools.append(b);};
+ if(state.cursor&&!state.complete)add(words('Más resultados','More results','Plus de résultats'),()=>moreResults(state));
+ if(state.token&&!state.complete)add(words('Ver todos los resultados','View all results','Voir tous les résultats'),()=>allResults(state,false));
+ if(state.token)add(words('Descargar todos los resultados (.txt)','Download all results (.txt)','Télécharger tous les résultats (.txt)'),()=>allResults(state,true));
+}
+async function moreResults(state){if(busy)return;setBusy(true);try{const d=await post('ask',{message:'More results',cursor:state.cursor,preferredLanguage:language});appendRecords(state,d.records||[],d.explanations||[]);state.cursor=d.cursor;controls(state);}catch(e){state.tools.append(el('p',e.message,'answer'));}finally{setBusy(false);}}
+function download(state){const lines=[words('Resultados de búsqueda','Search results','Résultats de recherche'),`${words('Pregunta','Question','Question')}: ${state.question}`,`${words('Consulta','Query','Requête')}: ${state.query||''}`,`${words('Fecha de consulta','Retrieved at','Consulté le')}: ${state.retrievedAt}`,`${words('Registros descargados','Downloaded records','Documents téléchargés')}: ${state.records.size}`,words('Metadatos del catálogo público. Los resultados pueden cambiar durante la consulta.','Public catalog metadata. Results can change during retrieval.','Métadonnées du catalogue public. Les résultats peuvent changer pendant la consultation.'),''];let i=0;for(const r of state.records.values()){lines.push(`${++i}. ${r.title}`,r.link);for(const [k,v] of Object.entries(r)){if(['title','link','id','contextToken','metadata'].includes(k)||!v||Array.isArray(v)&&!v.length)continue;lines.push(`${k}: ${Array.isArray(v)?v.join('; '):v}`);}for(const [key,f] of Object.entries(r.metadata||{}))lines.push(`${f.label||key} (${key}): ${f.values.join('; ')}${f.ambiguity&&key!=='date_created'?' [Definición ambigua: '+f.ambiguity+']':''}`);lines.push('');}const url=URL.createObjectURL(new Blob(['\uFEFF'+lines.join('\n')],{type:'text/plain;charset=utf-8'})),a=el('a');a.href=url;a.download='colmex-resultados.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);}
+async function allResults(state,save){
+ if(busy)return;if(state.complete){if(save)download(state);return;}setBusy(true);let cancelled=false;state.tools.replaceChildren();const stop=el('button',words('Cancelar','Cancel','Annuler'),'more');stop.onclick=()=>{cancelled=true;stop.disabled=true;};state.tools.append(stop);
+ try{let token=state.nextToken||state.token;while(token&&!cancelled){const d=await post('results',{token});state.total=d.total;appendRecords(state,d.records||[]);state.retrievedAt=d.retrievedAt;token=d.nextToken;state.nextToken=token;status.textContent=words(`Recuperando resultados: ${state.records.size}…`,`Retrieving results: ${state.records.size}…`,`Récupération des résultats : ${state.records.size}…`);if(token&&!cancelled)await new Promise(r=>setTimeout(r,550));}if(!token){state.complete=true;state.cursor=null;if(save)download(state);}controls(state);if(cancelled)state.tools.append(el('p',words('Consulta detenida. Puede continuar para recuperar los resultados restantes.','Stopped. You can resume retrieving the remaining results.','Consultation arrêtée. Vous pouvez reprendre.'),'answer'));}
+ catch(e){controls(state);state.tools.append(el('p',words('No se completó la recuperación. No se descargó un archivo parcial. ','Retrieval did not finish. No partial file was downloaded. ','La récupération est incomplète. Aucun fichier partiel téléchargé. ')+e.message,'answer'));}finally{setBusy(false);}
+}
+function setBusy(value){busy=value;button.disabled=value;status.hidden=!value;if(value)status.textContent=words('Consultando…','Searching…','Recherche…');}
+async function send(message,id,follow=false,display=message,groupToken){
+ if(busy||!message.trim())return;setBusy(true);document.querySelector('#example').hidden=true;input.value='';view.replaceChildren();
+ const q=el('article',undefined,'message user');q.append(el('div',words('Su pregunta','Your question','Votre question'),'speaker'),el('p',display,'answer'));view.append(q);
+ try{
+  const d=await post('ask',{message,follow,history:history.slice(-8),selectedId:groupToken?undefined:id||selectedId,...(groupToken?{groupToken}:{}),...(id&&current?.records.has(id)?{selectedRecord:current.records.get(id)}:{}),...(follow?{preferredLanguage:language}:{})});language=d.language||language;selectedId=d.selectedId||selectedId;q.querySelector('.speaker').textContent=words('Su pregunta','Your question','Votre question');
+  const a=el('article',undefined,'message assistant');a.append(el('div','Colmex','speaker'),el('p',d.text,'answer'));for(const c of d.citations||[])a.append(link(c.link,`[${c.number}] ${c.title}`));if(d.source)a.append(link(d.source,words('Ver consulta en el repositorio','View source','Voir la source')));if(d.detail)a.append(renderRecord(d.detail,d.metadata));
+  const state={question:display,query:d.query,total:d.total,records:new Map(),cursor:d.cursor,token:d.resultsToken,list:el('div'),tools:el('div',undefined,'result-tools'),count:el('p',undefined,'result-count'),retrievedAt:d.retrievedAt||new Date().toISOString()};current=state;
+  if(d.discovery)a.append(renderDiscovery(d.discovery,state));
+  if(d.records?.length){a.append(state.list,state.count,state.tools);appendRecords(state,d.records,d.explanations||[]);controls(state);}view.append(a);history.push({role:'user',text:message},{role:'assistant',text:d.text.slice(0,2000)});history=history.slice(-8);
+ }catch(e){view.append(el('p',e.name==='TimeoutError'?'La consulta tardó demasiado. Inténtelo de nuevo.':e.message,'answer'));}finally{setBusy(false);input.focus({preventScroll:true});}
+}
+form.onsubmit=e=>{e.preventDefault();send(input.value);};document.querySelector('#example').onclick=()=>send('historia minima de mexico');

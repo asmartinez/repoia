@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-10-09T17:13:24.178Z",
+  "results": [
+    {
+      "message": "How many public book records are in the repository?",
+      "language": "en",
+      "text": "The repository contains 4,911 public book records. This count describes deposited and visible records, not the entire historical production of El Colegio de México nor unique titles.",
+      "total": 4911,
+      "source": "https://repositorio.colmex.mx/catalog?f%5Bhuman_readable_type_sim%5D%5B%5D=Book",
+      "records": [],
+      "pass": true
+    },
+    {
+      "message": "Bonjour, que pouvez-vous faire ?",
+      "language": "fr",
+      "text": "Bonjour ! Je suis l'assistant de la Bibliothèque Daniel Cosío Villegas. Je peux vous aider à rechercher des documents (livres, thèses, notes de presse, documents d'archives, etc.) par titre, auteur, sujet ou termes dans l'index du dépôt. Je peux également vous expliquer leurs métadonnées et index, vous montrer des documents similaires, compter les documents publics par type (y compris les thèses) et consulter les auteurs ou sujets les plus fréquents, soit dans l'ensemble du dépôt, soit par type de document. N'hésitez pas si vous avez besoin d'aide !",
+      "records": [],
+      "pass": true
+    },
+    {
+      "message": "Busque materiales sobre fosas clandestinas",
+      "language": "es",
+      "text": "Se han encontrado 3359 registros sobre fosas clandestinas. Entre ellos, se incluyen: un libro de la Secretaría de Gobernación titulado \"Fosas clandestinas\" (2019), que aborda el tema junto con la desaparición de personas y el Registro Nacional de Fosas; un documento archivístico de ZonaDocs, \"Anexo a la solicitud de información sobre fosas clandestinas localizadas por personal militar\" ([2021]), que detalla hallazgos en varios estados de México; y varias notas de prensa de 2014 y 2019 que tratan sobre fosas clandestinas en relación con la violencia, el crimen organizado, víctimas de tortura y familias de personas desaparecidas en México.",
+      "total": 3359,
+      "records": [
+        {
+          "id": "k643b221q",
+          "type": "Libro",
+          "title": "Fosas clandestinas",
+          "link": "https://repositorio.colmex.mx/catalog/k643b221q"
+        },
+        {
+          "id": "1r66j308k",
+          "type": "Documento archivístico",
+          "title": "Anexo a la solicitud de información sobre fosas clandestinas localizadas por personal militar",
+          "link": "https://repositorio.colmex.mx/catalog/1r66j308k"
+        },
+        {
+          "id": "1z40kv374",
+          "type": "Nota de prensa",
+          "title": "Fosas clandestinas",
+          "link": "https://repositorio.colmex.mx/catalog/1z40kv374"
+        },
+        {
+          "id": "wp988n85x",
+          "type": "Nota de prensa",
+          "title": "Fosas clandestinas",
+          "link": "https://repositorio.colmex.mx/catalog/wp988n85x"
+        },
+        {
+          "id": "4m90dw77c",
+          "type": "Nota de prensa",
+          "title": "Fosas clandestinas",
+          "link": "https://repositorio.colmex.mx/catalog/4m90dw77c"
+        }
+      ],
+      "pass": true
+    }
+  ]
+}

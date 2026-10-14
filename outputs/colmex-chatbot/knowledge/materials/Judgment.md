@@ -1,0 +1,203 @@
+---
+{
+  "type": "Material Profile",
+  "title": "Judgment",
+  "description": "Perfil de Judgment en Colmex Hyrax.",
+  "resource": "https://github.com/ColmexBDCV/colmex_hyrax/blob/6f8bcb26568d03bc5b871bd620e7d9c13db64d17/app/models/judgment.rb",
+  "generated": {
+    "by": "process:hyrax-schema-extractor",
+    "at": "2026-10-09T20:27:23.573601Z"
+  },
+  "sources": [
+    {
+      "resource": "https://github.com/ColmexBDCV/colmex_hyrax/blob/6f8bcb26568d03bc5b871bd620e7d9c13db64d17/app/models/concerns/coordinates.rb"
+    },
+    {
+      "resource": "https://github.com/ColmexBDCV/colmex_hyrax/blob/6f8bcb26568d03bc5b871bd620e7d9c13db64d17/app/models/concerns/hyrax/basic_metadata.rb"
+    },
+    {
+      "resource": "https://github.com/ColmexBDCV/colmex_hyrax/blob/6f8bcb26568d03bc5b871bd620e7d9c13db64d17/app/models/concerns/index_children_works.rb"
+    },
+    {
+      "resource": "https://github.com/ColmexBDCV/colmex_hyrax/blob/6f8bcb26568d03bc5b871bd620e7d9c13db64d17/app/models/concerns/index_parent_works.rb"
+    },
+    {
+      "resource": "https://github.com/ColmexBDCV/colmex_hyrax/blob/6f8bcb26568d03bc5b871bd620e7d9c13db64d17/app/models/concerns/legal_documents.rb"
+    },
+    {
+      "resource": "https://github.com/ColmexBDCV/colmex_hyrax/blob/6f8bcb26568d03bc5b871bd620e7d9c13db64d17/app/models/judgment.rb"
+    },
+    {
+      "resource": "https://github.com/ColmexBDCV/colmex_hyrax/blob/6f8bcb26568d03bc5b871bd620e7d9c13db64d17/app/forms/hyrax/judgment_form.rb"
+    }
+  ],
+  "model": "Judgment",
+  "modules": [
+    "::Hyrax::WorkBehavior",
+    "LegalDocuments",
+    "::Hyrax::BasicMetadata"
+  ],
+  "fields": [
+    "alternate_title",
+    "author_identifier",
+    "based_near",
+    "beginning",
+    "bibliographic_citation",
+    "center",
+    "classification",
+    "collective_agent",
+    "collective_title",
+    "collector_collective_agent",
+    "commentator",
+    "compiler",
+    "complainant",
+    "contained_in",
+    "contestee",
+    "contributor",
+    "corporate_body",
+    "creator",
+    "criterio_seaes",
+    "curator_collective_agent_of",
+    "custodian_agent_of",
+    "data_type",
+    "date_created",
+    "date_of_manifestation",
+    "depository_agent",
+    "depository_collective_agent_of",
+    "description",
+    "digital_file_characteristics",
+    "digital_resource_generation_information",
+    "dimensions",
+    "doi",
+    "draftsman",
+    "edition",
+    "editor",
+    "enacting_juridiction_of",
+    "encoding_format_details",
+    "ending",
+    "extension",
+    "file_type_details",
+    "funding_information",
+    "gender_or_form",
+    "geographic_coverage",
+    "handle",
+    "has_carrier_type",
+    "has_category_of_work",
+    "has_conceptualization_contributor",
+    "has_contact_information",
+    "has_creator",
+    "has_data_curation_contributor",
+    "has_degree_granting_institution",
+    "has_designation_of_version",
+    "has_field_activity_of_agent",
+    "has_formal_analysis_contributor",
+    "has_funding_acquisition_contributor",
+    "has_identifier_for_item",
+    "has_investigation_contributor",
+    "has_methodology_contributor",
+    "has_organizer_corporate_body",
+    "has_person_member_of_collective_agent",
+    "has_project_administration_contributor",
+    "has_resources_contributor",
+    "has_software_contributor",
+    "has_supervision_contributor",
+    "has_system_of_organization",
+    "has_transformation_by_genre",
+    "has_validation_contributor",
+    "has_visualization_contributor",
+    "has_writing_original_draft_contributor",
+    "has_writing_review_editing_contributor",
+    "hierarchical_inferior",
+    "hierarchical_superior",
+    "identifier",
+    "identifier_of_work",
+    "import_url",
+    "interviewee",
+    "interviewer",
+    "is_criminal_defendant_corporate_body_of",
+    "is_criminal_defendant_person_of",
+    "is_dancer_agent_of",
+    "is_facsimile_of_manifestation_of",
+    "is_graduate_of",
+    "is_person_member_of_collective_agent",
+    "is_subcollection_of",
+    "is_title_of_item_of",
+    "is_transformation_by_genre",
+    "isbn",
+    "item_access_restrictions",
+    "item_use_restrictions",
+    "justificacion_seaes",
+    "keyword",
+    "label",
+    "language",
+    "language_of_expression",
+    "license",
+    "local_resource_identifier",
+    "manifestation_access_restrictions",
+    "manifestation_use_restrictions",
+    "mode_of_issuance",
+    "narrator",
+    "note_of_timespan",
+    "note_on_statement_of_responsibility",
+    "notes",
+    "numbering_of_part",
+    "organizer",
+    "organizer_collective_agent",
+    "other_related_persons",
+    "other_title",
+    "owner_agent_of",
+    "part_of_place",
+    "photographer",
+    "place_of_publication",
+    "primary_topic",
+    "project",
+    "provenance",
+    "publisher",
+    "related_corporate_body_of_timespan",
+    "related_family_timespan",
+    "related_person_of",
+    "related_url",
+    "related_work_of_work",
+    "relative_path",
+    "researcher_agent_of",
+    "resource_access_restrictions",
+    "resource_type",
+    "resource_use_restrictions",
+    "responsibility_statement",
+    "reviewer",
+    "rights_statement",
+    "source",
+    "subject",
+    "subject_corporate",
+    "subject_family",
+    "subject_person",
+    "subject_timespan",
+    "subject_uniform_title",
+    "subject_work",
+    "supplementary_content_or_bibliography",
+    "system_requirements",
+    "table_of_contents",
+    "temporary_coverage",
+    "thematic_collection",
+    "timespan_described_in",
+    "translator",
+    "type_of_content",
+    "type_of_illustrations",
+    "witness",
+    "writer_of_suplementary_textual_content"
+  ],
+  "explicitFormTerms": [
+    "resource_type"
+  ]
+}
+---
+# Schema
+
+Clase técnica `Judgment`. Módulos compartidos: ::Hyrax::WorkBehavior, LegalDocuments, ::Hyrax::BasicMetadata.
+
+Campos declarados localmente o incorporados por módulos identificados:
+`alternate_title`, `author_identifier`, `based_near`, `beginning`, `bibliographic_citation`, `center`, `classification`, `collective_agent`, `collective_title`, `collector_collective_agent`, `commentator`, `compiler`, `complainant`, `contained_in`, `contestee`, `contributor`, `corporate_body`, `creator`, `criterio_seaes`, `curator_collective_agent_of`, `custodian_agent_of`, `data_type`, `date_created`, `date_of_manifestation`, `depository_agent`, `depository_collective_agent_of`, `description`, `digital_file_characteristics`, `digital_resource_generation_information`, `dimensions`, `doi`, `draftsman`, `edition`, `editor`, `enacting_juridiction_of`, `encoding_format_details`, `ending`, `extension`, `file_type_details`, `funding_information`, `gender_or_form`, `geographic_coverage`, `handle`, `has_carrier_type`, `has_category_of_work`, `has_conceptualization_contributor`, `has_contact_information`, `has_creator`, `has_data_curation_contributor`, `has_degree_granting_institution`, `has_designation_of_version`, `has_field_activity_of_agent`, `has_formal_analysis_contributor`, `has_funding_acquisition_contributor`, `has_identifier_for_item`, `has_investigation_contributor`, `has_methodology_contributor`, `has_organizer_corporate_body`, `has_person_member_of_collective_agent`, `has_project_administration_contributor`, `has_resources_contributor`, `has_software_contributor`, `has_supervision_contributor`, `has_system_of_organization`, `has_transformation_by_genre`, `has_validation_contributor`, `has_visualization_contributor`, `has_writing_original_draft_contributor`, `has_writing_review_editing_contributor`, `hierarchical_inferior`, `hierarchical_superior`, `identifier`, `identifier_of_work`, `import_url`, `interviewee`, `interviewer`, `is_criminal_defendant_corporate_body_of`, `is_criminal_defendant_person_of`, `is_dancer_agent_of`, `is_facsimile_of_manifestation_of`, `is_graduate_of`, `is_person_member_of_collective_agent`, `is_subcollection_of`, `is_title_of_item_of`, `is_transformation_by_genre`, `isbn`, `item_access_restrictions`, `item_use_restrictions`, `justificacion_seaes`, `keyword`, `label`, `language`, `language_of_expression`, `license`, `local_resource_identifier`, `manifestation_access_restrictions`, `manifestation_use_restrictions`, `mode_of_issuance`, `narrator`, `note_of_timespan`, `note_on_statement_of_responsibility`, `notes`, `numbering_of_part`, `organizer`, `organizer_collective_agent`, `other_related_persons`, `other_title`, `owner_agent_of`, `part_of_place`, `photographer`, `place_of_publication`, `primary_topic`, `project`, `provenance`, `publisher`, `related_corporate_body_of_timespan`, `related_family_timespan`, `related_person_of`, `related_url`, `related_work_of_work`, `relative_path`, `researcher_agent_of`, `resource_access_restrictions`, `resource_type`, `resource_use_restrictions`, `responsibility_statement`, `reviewer`, `rights_statement`, `source`, `subject`, `subject_corporate`, `subject_family`, `subject_person`, `subject_timespan`, `subject_uniform_title`, `subject_work`, `supplementary_content_or_bibliography`, `system_requirements`, `table_of_contents`, `temporary_coverage`, `thematic_collection`, `timespan_described_in`, `translator`, `type_of_content`, `type_of_illustrations`, `witness`, `writer_of_suplementary_textual_content`
+
+Términos añadidos explícitamente al formulario: resource_type.
+
+Esta extracción no incluye propiedades adicionales aportadas por dependencias externas ni evaluación completa del formulario Rails. La clase técnica no equivale necesariamente a una etiqueta de tipo de recurso. Consulte los [campos](/fields/index.md).

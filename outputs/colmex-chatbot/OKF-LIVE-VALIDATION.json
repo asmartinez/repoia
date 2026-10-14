@@ -1,0 +1,801 @@
+{
+  "phase": "OKF and advanced retrieval",
+  "date": "2026-10-09",
+  "automatedTests": {
+    "passed": 26,
+    "failed": 0,
+    "runtime": "Node 26"
+  },
+  "liveExamples": [
+    {
+      "message": "Busque materiales sobre migración publicados entre 2000 y 2020.",
+      "status": 200,
+      "durationMs": 7775,
+      "text": "Hemos encontrado 194 materiales sobre migración publicados entre los años 2000 y 2020. A continuación, se presentan algunos de los resultados.",
+      "language": "es",
+      "total": 194,
+      "records": [
+        {
+          "id": "vd66w0670",
+          "title": "Migración y seguridad: dilemas e interrogantes",
+          "year": "2011",
+          "type": "Capítulo de libro",
+          "link": "https://repositorio.colmex.mx/concern/book_chapters/vd66w0670"
+        },
+        {
+          "id": "12579x62s",
+          "title": "Migración y fronteras",
+          "year": "2000",
+          "type": "Libro",
+          "link": "https://repositorio.colmex.mx/concern/books/12579x62s"
+        },
+        {
+          "id": "mp48sd149",
+          "title": "Los contextos de salida urbanos y rurales y la organización social de la migración",
+          "year": "2006",
+          "type": "Artículo de revista",
+          "link": "https://repositorio.colmex.mx/concern/articles/mp48sd149"
+        },
+        {
+          "id": "5t34sj98b",
+          "title": "Devaluación del trabajo de posgraduados en México y migración internacional: los profesionistas en ciencia y tecnología",
+          "year": "2015",
+          "type": "Artículo de revista",
+          "link": "https://repositorio.colmex.mx/concern/articles/5t34sj98b"
+        },
+        {
+          "id": "pg15bf68h",
+          "title": "México, Centroamérica y Estados Unidos: migración y seguridad",
+          "year": "2011",
+          "type": "Capítulo de libro",
+          "link": "https://repositorio.colmex.mx/concern/book_chapters/pg15bf68h"
+        }
+      ],
+      "searchEvidence": [
+        {
+          "spec": {
+            "clauses": [
+              {
+                "field": "all_fields",
+                "value": "migración",
+                "required": true
+              }
+            ],
+            "operator": "AND",
+            "filters": [],
+            "yearFrom": 2000,
+            "yearTo": 2020,
+            "sort": "relevance"
+          },
+          "total": 194,
+          "source": "https://repositorio.colmex.mx/catalog?search_field=advanced&op=AND&sort=score+desc%2C+system_create_dtsi+desc&q=migraci%C3%B3n&range%5Bdate_created_sim%5D%5Bbegin%5D=2000&range%5Bdate_created_sim%5D%5Bend%5D=2020&page=1&per_page=5",
+          "fallback": null
+        }
+      ],
+      "citations": [],
+      "hasMore": true,
+      "hasExport": true
+    },
+    {
+      "message": "Are there any materials about aztec dancers?",
+      "status": 200,
+      "durationMs": 8000,
+      "text": "I searched the catalog for materials related to \"aztec dancers\" using the terms \"azteca\" and \"danzantes,\" and also \"mexica\" and \"danza.\" However, no matching records were found for these specific terms in the public catalog.",
+      "language": "en",
+      "total": null,
+      "records": [],
+      "searchEvidence": [
+        {
+          "spec": {
+            "clauses": [
+              {
+                "field": "all_fields",
+                "value": "azteca",
+                "required": true
+              },
+              {
+                "field": "all_fields",
+                "value": "danzantes",
+                "required": true
+              }
+            ],
+            "operator": "AND",
+            "filters": [],
+            "sort": "relevance"
+          },
+          "total": 0,
+          "source": "https://repositorio.colmex.mx/catalog?search_field=advanced&op=AND&sort=score+desc%2C+system_create_dtsi+desc&q=%28azteca%29+AND+%28danzantes%29&page=1&per_page=5",
+          "fallback": null
+        },
+        {
+          "spec": {
+            "clauses": [
+              {
+                "field": "all_fields",
+                "value": "mexica",
+                "required": true
+              },
+              {
+                "field": "all_fields",
+                "value": "danza",
+                "required": true
+              }
+            ],
+            "operator": "AND",
+            "filters": [],
+            "sort": "relevance"
+          },
+          "total": 0,
+          "source": "https://repositorio.colmex.mx/catalog?search_field=advanced&op=AND&sort=score+desc%2C+system_create_dtsi+desc&q=%28mexica%29+AND+%28danza%29&page=1&per_page=5",
+          "fallback": null
+        }
+      ],
+      "citations": [],
+      "hasMore": false,
+      "hasExport": true
+    },
+    {
+      "message": "Compare los materiales del repositorio sobre migración y remesas. Explique qué puede inferirse de sus descripciones.",
+      "status": 200,
+      "durationMs": 12333,
+      "text": "Los materiales del repositorio sobre migración y remesas revelan una diversidad de enfoques y períodos de estudio. Mientras que la migración es un tema abordado desde perspectivas históricas, de seguridad, sociales y fronterizas, las remesas se examinan principalmente en relación con sus impactos económicos y socioculturales, así como su contribución a los ingresos públicos. La mayoría de los estudios se centran en el contexto mexicano y la relación con Estados Unidos, aunque también se extiende a América Latina y el Caribe. La muestra analizada incluye capítulos de libro, libros, documentos archivísticos y artículos de revista, abarcando desde 1922 hasta 2012.\n\nEsta interpretación se basa en una muestra de 10 registros públicos recuperados, no en todo el repositorio ni en los textos completos.",
+      "language": "es",
+      "total": null,
+      "records": [
+        {
+          "id": "g445cj33m",
+          "title": "Visitador de Migración",
+          "year": "1922",
+          "type": "Documento archivístico",
+          "link": "https://repositorio.colmex.mx/concern/archival_documents/g445cj33m"
+        },
+        {
+          "id": "9c67wn690",
+          "title": "Migración y fronteras",
+          "year": "1998",
+          "type": "Libro",
+          "link": "https://repositorio.colmex.mx/concern/books/9c67wn690"
+        },
+        {
+          "id": "12579x62s",
+          "title": "Migración y fronteras",
+          "year": "2000",
+          "type": "Libro",
+          "link": "https://repositorio.colmex.mx/concern/books/12579x62s"
+        },
+        {
+          "id": "vd66w0670",
+          "title": "Migración y seguridad: dilemas e interrogantes",
+          "year": "2011",
+          "type": "Capítulo de libro",
+          "link": "https://repositorio.colmex.mx/concern/book_chapters/vd66w0670"
+        },
+        {
+          "id": "mp48sd149",
+          "title": "Los contextos de salida urbanos y rurales y la organización social de la migración",
+          "year": "2006",
+          "type": "Artículo de revista",
+          "link": "https://repositorio.colmex.mx/concern/articles/mp48sd149"
+        },
+        {
+          "id": "st74cq858",
+          "title": "Transformaciones comunitarias y remesas socioculturales de los migrantes mixtecos poblanos",
+          "year": "2004",
+          "type": "Artículo de revista",
+          "link": "https://repositorio.colmex.mx/concern/articles/st74cq858"
+        },
+        {
+          "id": "7d278t52b",
+          "title": "Desarrollo regional y uso de las remesas de los migrantes",
+          "year": "2008",
+          "type": "Artículo en revista COLMEX",
+          "link": "https://repositorio.colmex.mx/concern/articles/7d278t52b"
+        },
+        {
+          "id": "6m311p740",
+          "title": "Contribución de las remesas a los ingresos públicos en México",
+          "year": "2010",
+          "type": "Artículo de revista",
+          "link": "https://repositorio.colmex.mx/concern/articles/6m311p740"
+        },
+        {
+          "id": "08612n85w",
+          "title": "Migración calificada y remesas en América Latina y el Caribe",
+          "year": "2012",
+          "type": "Artículo de revista",
+          "link": "https://repositorio.colmex.mx/concern/articles/08612n85w"
+        },
+        {
+          "id": "fn106z25j",
+          "title": "Las remesas monetarias de trabajadores mexicanos en Estados Unidos: nuevas estimaciones",
+          "year": "1992",
+          "type": "Tesis de Maestría",
+          "link": "https://repositorio.colmex.mx/concern/theses/fn106z25j"
+        }
+      ],
+      "searchEvidence": [
+        {
+          "spec": {
+            "clauses": [
+              {
+                "field": "all_fields",
+                "value": "migración",
+                "required": true
+              }
+            ],
+            "operator": "AND",
+            "filters": [],
+            "sort": "relevance"
+          },
+          "total": 554,
+          "source": "https://repositorio.colmex.mx/catalog?search_field=advanced&op=AND&sort=score+desc%2C+system_create_dtsi+desc&q=migraci%C3%B3n&page=1&per_page=5",
+          "fallback": null
+        },
+        {
+          "spec": {
+            "clauses": [
+              {
+                "field": "all_fields",
+                "value": "remesas",
+                "required": true
+              }
+            ],
+            "operator": "AND",
+            "filters": [],
+            "sort": "relevance"
+          },
+          "total": 56,
+          "source": "https://repositorio.colmex.mx/catalog?search_field=advanced&op=AND&sort=score+desc%2C+system_create_dtsi+desc&q=remesas&page=1&per_page=5",
+          "fallback": null
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "id": "vd66w0670",
+          "title": "Migración y seguridad: dilemas e interrogantes",
+          "link": "https://repositorio.colmex.mx/concern/book_chapters/vd66w0670"
+        },
+        {
+          "number": 2,
+          "id": "g445cj33m",
+          "title": "Visitador de Migración",
+          "link": "https://repositorio.colmex.mx/concern/archival_documents/g445cj33m"
+        },
+        {
+          "number": 3,
+          "id": "12579x62s",
+          "title": "Migración y fronteras",
+          "link": "https://repositorio.colmex.mx/concern/books/12579x62s"
+        },
+        {
+          "number": 4,
+          "id": "9c67wn690",
+          "title": "Migración y fronteras",
+          "link": "https://repositorio.colmex.mx/concern/books/9c67wn690"
+        },
+        {
+          "number": 5,
+          "id": "mp48sd149",
+          "title": "Los contextos de salida urbanos y rurales y la organización social de la migración",
+          "link": "https://repositorio.colmex.mx/concern/articles/mp48sd149"
+        },
+        {
+          "number": 6,
+          "id": "7d278t52b",
+          "title": "Desarrollo regional y uso de las remesas de los migrantes",
+          "link": "https://repositorio.colmex.mx/concern/articles/7d278t52b"
+        },
+        {
+          "number": 7,
+          "id": "st74cq858",
+          "title": "Transformaciones comunitarias y remesas socioculturales de los migrantes mixtecos poblanos",
+          "link": "https://repositorio.colmex.mx/concern/articles/st74cq858"
+        },
+        {
+          "number": 8,
+          "id": "08612n85w",
+          "title": "Migración calificada y remesas en América Latina y el Caribe",
+          "link": "https://repositorio.colmex.mx/concern/articles/08612n85w"
+        },
+        {
+          "number": 9,
+          "id": "6m311p740",
+          "title": "Contribución de las remesas a los ingresos públicos en México",
+          "link": "https://repositorio.colmex.mx/concern/articles/6m311p740"
+        },
+        {
+          "number": 10,
+          "id": "fn106z25j",
+          "title": "Las remesas monetarias de trabajadores mexicanos en Estados Unidos: nuevas estimaciones",
+          "link": "https://repositorio.colmex.mx/concern/theses/fn106z25j"
+        }
+      ],
+      "hasMore": true,
+      "hasExport": true
+    },
+    {
+      "message": "¿Quién desarrolló este chatbot y cómo trabaja?",
+      "status": 200,
+      "durationMs": 6739,
+      "text": "Este chatbot fue desarrollado por Rodrigo Cuellar como responsable principal y Alberto Santiago Martinez como product owner y estratega. El proyecto es encabezado por la Coordinación de Innovación Digital de la Biblioteca Daniel Cosío Villegas de El Colegio de México. Funciona interpretando su pregunta y el idioma, decidiendo si necesita consultar el catálogo público del repositorio Hyrax. Utiliza Google Gemini para la interpretación y redacción de respuestas, y tecnologías como Node.js, Ruby on Rails, Fedora y Solr para la gestión y búsqueda de materiales. Trabaja con metadatos e índices, pero no lee automáticamente los documentos completos, por lo que no puede confirmar citas o páginas específicas.",
+      "language": "es",
+      "records": [],
+      "searchEvidence": [],
+      "citations": [],
+      "hasMore": false,
+      "hasExport": false
+    },
+    {
+      "message": "¿Puede localizar la frase exacta \"unicornio azul de plutón inexistente\" y decirme en qué página aparece?",
+      "status": 200,
+      "durationMs": 4397,
+      "text": "No se encontraron resultados para la frase exacta \"unicornio azul de plutón inexistente\" en los metadatos indexados del catálogo. Es importante mencionar que el sistema no puede confirmar la ubicación exacta de frases o números de página específicos dentro de los documentos, ya que trabaja con metadatos y texto extraído, no con el contenido completo de los archivos para este tipo de búsqueda detallada.",
+      "language": "es",
+      "total": 0,
+      "records": [],
+      "searchEvidence": [
+        {
+          "spec": {
+            "clauses": [
+              {
+                "field": "all_fields",
+                "value": "\"unicornio azul de plutón inexistente\"",
+                "required": true
+              }
+            ],
+            "operator": "AND",
+            "filters": [],
+            "sort": "relevance"
+          },
+          "total": 0,
+          "source": "https://repositorio.colmex.mx/catalog?search_field=advanced&op=AND&sort=score+desc%2C+system_create_dtsi+desc&q=%22unicornio+azul+de+plut%C3%B3n+inexistente%22&page=1&per_page=5",
+          "fallback": null
+        }
+      ],
+      "citations": [],
+      "hasMore": false,
+      "hasExport": true
+    },
+    {
+      "message": "Examine la calidad de los metadatos de materiales sobre Cuautla. ¿Qué puede verificar y qué no?",
+      "status": 200,
+      "durationMs": 15846,
+      "text": "Al examinar la calidad de los metadatos de los materiales relacionados con Cuautla, se puede verificar una variedad de información explícita, pero también se identifican algunas ambigüedades y limitaciones inherentes a la naturaleza de los metadatos y el alcance de la muestra. La muestra analizada consta de cinco registros que incluyen cancioneros, notas de prensa y un reglamento municipal, abarcando desde 1931 hasta 2019. Estos registros permiten observar la diversidad de tipos de documentos y la evolución temporal de los temas asociados a Cuautla.\n\nSe puede verificar con claridad el título de cada obra, los creadores (como \"Anónimo\" o \"Morelos Cruz, Rubicela\"), el idioma principal (Español/español) y los sujetos temáticos asignados, como \"Historia\", \"Corridos y canciones mexicanos\" o \"Fosas clandestinas\" [1, 2, 3, 4, 5]. La cobertura geográfica general, que incluye \"México\" y \"Cuautla (Morelos)\" o \"Morelos\", también es explícita. Además, se pueden confirmar detalles específicos como el editor en algunos casos (por ejemplo, \"Imprenta Guerrero\" para los cancioneros [1, 2]) y las restricciones de acceso cuando se indican, como \"Acceso restringido\" o \"Acceso abierto\" [3, 4]. Las descripciones presentes, aunque breves, proporcionan fragmentos del contenido o características físicas del material, como el número de hojas o páginas [1, 2, 3, 5].\n\nSin embargo, existen aspectos que no se pueden verificar completamente o que presentan ambigüedades. Una limitación recurrente es la interpretación del campo `date_created` (Año). Aunque el nombre sugiere la fecha de creación, la información de metadatos indica que el predicado local podría referirse a la fecha de publicación, lo que requiere una verificación de la práctica catalográfica para cada tipo de colección [1, 2, 3, 5]. Esta ambigüedad impide confirmar si el año se refiere al momento de la creación intelectual o a la difusión del material. Otro punto de ambigüedad es el campo `geographic_coverage`, que utiliza el predicado FOAF `based_near`. Se señala un solapamiento y posibles inconsistencias en las etiquetas, lo que podría afectar la precisión de la definición de la cobertura temática geográfica [1, 2, 3, 4, 5].\n\nAsimismo, la ausencia de información en ciertos campos limita la verificación. Por ejemplo, algunos registros carecen de descripción [3, 4, 5], lo que impide conocer detalles del contenido más allá del título y los sujetos. De manera similar, los campos de editor están vacíos en varias notas de prensa y el reglamento municipal [3, 4, 5], y el campo de extensión está ausente en un reglamento [4]. No se puede confirmar la exactitud de citas o pasajes específicos dentro de los documentos, ya que solo se dispone de metadatos y no de los textos completos. La muestra de cinco registros, aunque ilustrativa, no permite sacar conclusiones sobre la calidad general de todos los metadatos del repositorio relacionados con Cuautla, sino solo sobre los elementos observados en estos materiales específicos.\n\nEsta interpretación se basa en una muestra de 5 registros públicos recuperados, no en todo el repositorio ni en los textos completos.",
+      "language": "es",
+      "total": 147,
+      "records": [
+        {
+          "id": "k0698b813",
+          "title": "La toma de Cuautla por González 2a. Parte",
+          "year": "1931",
+          "type": "Cancionero",
+          "link": "https://repositorio.colmex.mx/concern/books/k0698b813"
+        },
+        {
+          "id": "th83m302c",
+          "title": "La toma de Cuautla por Zapata 1a. Parte",
+          "year": "1931",
+          "type": "Cancionero",
+          "link": "https://repositorio.colmex.mx/concern/books/th83m302c"
+        },
+        {
+          "id": "hq37vp71n",
+          "title": "Exigen que peritos externos exhumen cuerpos de fosas ilegales en Cuautla",
+          "year": "2016",
+          "type": "Nota de prensa",
+          "link": "https://repositorio.colmex.mx/concern/press_releases/hq37vp71n"
+        },
+        {
+          "id": "g158bj17c",
+          "title": "Reglamento de panteones para el municipio de Cuautla, Morelos",
+          "year": "11 de enero de 2017",
+          "type": "Reglamento municipal",
+          "link": "https://repositorio.colmex.mx/concern/legislations/g158bj17c"
+        },
+        {
+          "id": "pc289n06w",
+          "title": "Denunciante de fosas clandestinas en Cuautla señala intento de sobornarla",
+          "year": "2019",
+          "type": "Nota de prensa",
+          "link": "https://repositorio.colmex.mx/concern/press_releases/pc289n06w"
+        }
+      ],
+      "searchEvidence": [
+        {
+          "spec": {
+            "clauses": [
+              {
+                "field": "all_fields",
+                "value": "Cuautla",
+                "required": true
+              }
+            ],
+            "operator": "AND",
+            "filters": [],
+            "sort": "relevance"
+          },
+          "total": 147,
+          "source": "https://repositorio.colmex.mx/catalog?search_field=advanced&op=AND&sort=score+desc%2C+system_create_dtsi+desc&q=Cuautla&page=1&per_page=5",
+          "fallback": null
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "id": "k0698b813",
+          "title": "La toma de Cuautla por González 2a. Parte",
+          "link": "https://repositorio.colmex.mx/concern/books/k0698b813"
+        },
+        {
+          "number": 2,
+          "id": "th83m302c",
+          "title": "La toma de Cuautla por Zapata 1a. Parte",
+          "link": "https://repositorio.colmex.mx/concern/books/th83m302c"
+        },
+        {
+          "number": 3,
+          "id": "hq37vp71n",
+          "title": "Exigen que peritos externos exhumen cuerpos de fosas ilegales en Cuautla",
+          "link": "https://repositorio.colmex.mx/concern/press_releases/hq37vp71n"
+        },
+        {
+          "number": 4,
+          "id": "g158bj17c",
+          "title": "Reglamento de panteones para el municipio de Cuautla, Morelos",
+          "link": "https://repositorio.colmex.mx/concern/legislations/g158bj17c"
+        },
+        {
+          "number": 5,
+          "id": "pc289n06w",
+          "title": "Denunciante de fosas clandestinas en Cuautla señala intento de sobornarla",
+          "link": "https://repositorio.colmex.mx/concern/press_releases/pc289n06w"
+        }
+      ],
+      "hasMore": true,
+      "hasExport": true
+    }
+  ],
+  "finalChecks": [
+    {
+      "message": "Show works written by Octavio Paz, not works about him.",
+      "language": "en",
+      "action": "search",
+      "spec": [
+        {
+          "clauses": [
+            {
+              "field": "creator",
+              "value": "Octavio Paz",
+              "required": true
+            }
+          ],
+          "operator": "AND",
+          "filters": [],
+          "sort": "relevance"
+        }
+      ],
+      "total": 3,
+      "records": [
+        {
+          "title": "Semillas para un himno",
+          "creators": [
+            "Paz, Octavio"
+          ],
+          "year": "1954",
+          "link": "https://repositorio.colmex.mx/concern/books/3b591d05k"
+        },
+        {
+          "title": "La poesía hermética de Octavio Paz",
+          "creators": [
+            "Magis, Carlos Horacio",
+            "Paz, Octavio"
+          ],
+          "year": "1978",
+          "link": "https://repositorio.colmex.mx/concern/books/tb09j933x"
+        },
+        {
+          "title": "Homenaje a María Zambrano: estudios y correspondencia",
+          "creators": [
+            "Stanton, Anthony",
+            "Valender, James",
+            "Corral, Rose",
+            "Paz, Octavio",
+            "Chica, Francisco",
+            "Castañón, Adolfo",
+            "Muñiz-Huberman, Angelina",
+            "Dennis, Nigel",
+            "Xirau, Ramón"
+          ],
+          "year": "1998",
+          "link": "https://repositorio.colmex.mx/concern/books/kh04dq39s"
+        }
+      ]
+    },
+    {
+      "message": "Quels documents portent sur la migration ?",
+      "language": "fr",
+      "action": "search",
+      "spec": [
+        {
+          "clauses": [
+            {
+              "field": "all_fields",
+              "value": "migración",
+              "required": true
+            }
+          ],
+          "operator": "AND",
+          "filters": [],
+          "sort": "relevance"
+        }
+      ],
+      "total": 554,
+      "records": [
+        {
+          "title": "Migración y seguridad: dilemas e interrogantes",
+          "creators": [
+            "Artola, Juan",
+            "Herrera-Lasso M., Luis"
+          ],
+          "year": "2011",
+          "link": "https://repositorio.colmex.mx/concern/book_chapters/vd66w0670"
+        },
+        {
+          "title": "Visitador de Migración",
+          "creators": [
+            "Calles, Plutarco Elías"
+          ],
+          "year": "1922",
+          "link": "https://repositorio.colmex.mx/concern/archival_documents/g445cj33m"
+        },
+        {
+          "title": "Migración y fronteras",
+          "creators": [],
+          "year": "2000",
+          "link": "https://repositorio.colmex.mx/concern/books/12579x62s"
+        },
+        {
+          "title": "Migración y fronteras",
+          "creators": [],
+          "year": "1998",
+          "link": "https://repositorio.colmex.mx/concern/books/9c67wn690"
+        },
+        {
+          "title": "Los contextos de salida urbanos y rurales y la organización social de la migración",
+          "creators": [
+            "Rivera Sánchez, Liliana",
+            "Lozano Ascencio, Fernando"
+          ],
+          "year": "2006",
+          "link": "https://repositorio.colmex.mx/concern/articles/mp48sd149"
+        }
+      ]
+    },
+    {
+      "message": "Busque materiales sobre migración y remesas publicados entre 2000 y 2020.",
+      "language": "es",
+      "action": "search",
+      "spec": [
+        {
+          "clauses": [
+            {
+              "field": "all_fields",
+              "value": "migración",
+              "required": true
+            },
+            {
+              "field": "all_fields",
+              "value": "remesas",
+              "required": true
+            }
+          ],
+          "operator": "AND",
+          "filters": [],
+          "yearFrom": 2000,
+          "yearTo": 2020,
+          "sort": "relevance"
+        }
+      ],
+      "total": 6,
+      "records": [
+        {
+          "title": "Transformaciones comunitarias y remesas socioculturales de los migrantes mixtecos poblanos",
+          "creators": [
+            "Rivera Sánchez, Liliana"
+          ],
+          "year": "2004",
+          "link": "https://repositorio.colmex.mx/concern/articles/st74cq858"
+        },
+        {
+          "title": "Contribución de las remesas a los ingresos públicos en México",
+          "creators": [
+            "Huesca Reynoso, Luis",
+            "Valdivia López, Marcos",
+            "Lozano Ascencio, Fernando"
+          ],
+          "year": "2010",
+          "link": "https://repositorio.colmex.mx/concern/articles/6m311p740"
+        },
+        {
+          "title": "Migración calificada y remesas en América Latina y el Caribe",
+          "creators": [
+            "Jardón Hernández, Ana Elizabeth",
+            "Lozano Ascencio, Fernando"
+          ],
+          "year": "2012",
+          "link": "https://repositorio.colmex.mx/concern/articles/08612n85w"
+        },
+        {
+          "title": "Migración y remesas en la región Centro Occidente y su impacto en la desigualdad y fuentes de ingreso",
+          "creators": [
+            "Mora Rivera, José Jorge"
+          ],
+          "year": "2005",
+          "link": "https://repositorio.colmex.mx/concern/theses/rv042t31b"
+        },
+        {
+          "title": "Lozano Ascencio, Fernando, Discurso oficial, remesas y desarrollo en México. Migración y desarrollo [en linea] 2003, (Julio-Diciembre) :  [Fecha de consulta: 5 de julio de 2019] Disponible en : <> ISSN 1870-7599",
+          "creators": [
+            "Lozano Ascencio, Fernando"
+          ],
+          "year": "2003",
+          "link": "https://repositorio.colmex.mx/concern/articles/5999n378r"
+        }
+      ]
+    },
+    {
+      "message": "Examine la calidad de los metadatos de materiales sobre Cuautla. ¿Qué puede verificar y qué no?",
+      "language": "es",
+      "text": "Al examinar la calidad de los metadatos de los materiales relacionados con Cuautla, se observa una combinación de información detallada y algunas inconsistencias o ambigüedades que pueden afectar la interpretación precisa de los registros. La muestra analizada incluye cancioneros y notas de prensa, así como un reglamento municipal, lo que permite una visión variada de las prácticas de catalogación [1, 2, 3, 4, 5].\n\nEn cuanto a lo que se puede verificar, los títulos, autores (cuando están presentes), idiomas, extensiones y los temas principales están consistentemente registrados en todos los materiales. Por ejemplo, los cancioneros [1, 2] detallan el editor y ofrecen fragmentos de la primera estrofa en sus descripciones, lo que enriquece el contexto del contenido. Las notas de prensa [3, 5] y el reglamento [4] también presentan claramente sus autores (o ausencia de ellos), las entidades depositantes y los repositorios colectores, así como las fechas de manifestación.\n\nSin embargo, existen aspectos que no se pueden verificar con total certeza o que presentan inconsistencias. Una ambigüedad recurrente se encuentra en el campo `date_created` (Año), donde la ayuda genérica sugiere la fecha de creación, pero el predicado local indica publicación. Esta distinción es crucial para entender la cronología de la obra. En los cancioneros [1, 2], la descripción interna del registro indica explícitamente \"Fecha de publicación no identificada\", lo cual contradice el valor de `date_created` de 1931. Esta discrepancia directa dentro del mismo registro es una limitación importante para la fiabilidad de la fecha de publicación.\n\nOtro punto de ambigüedad se observa en la relación entre `based_near` y `geographic_coverage`. Aunque ambos campos apuntan a la cobertura geográfica, la nota de metadatos indica un solapamiento y etiquetas potencialmente inconsistentes, lo que sugiere que la interpretación de la cobertura temática podría no ser uniforme en todo el catálogo. Además, en el caso del reglamento municipal [4], el campo `extent` (extensión) está ausente, lo que impide verificar la longitud del documento. Para las notas de prensa [3, 5], el campo `description` (resumen) está vacío, lo que limita la comprensión rápida de su contenido sin acceder al documento completo. Finalmente, en un registro [5], se observa que el campo `geographic_coverage` incluye Cuernavaca (Morelos) y México, mientras que el título y el contexto de la pregunta se centran en Cuautla, lo que podría indicar una cobertura geográfica más amplia de lo esperado o una posible imprecisión en la especificidad del lugar principal de la noticia. La muestra examinada consta de 5 registros de un total de 147 resultados para la búsqueda de \"Cuautla\" en el catálogo público.\n\nEsta interpretación se basa en una muestra de 5 registros públicos recuperados, no en todo el repositorio ni en los textos completos.",
+      "total": 147,
+      "searchEvidence": [
+        {
+          "spec": {
+            "clauses": [
+              {
+                "field": "all_fields",
+                "value": "Cuautla",
+                "required": true
+              }
+            ],
+            "operator": "AND",
+            "filters": [],
+            "sort": "relevance"
+          },
+          "total": 147,
+          "source": "https://repositorio.colmex.mx/catalog?search_field=advanced&op=AND&sort=score+desc%2C+system_create_dtsi+desc&q=Cuautla&page=1&per_page=5",
+          "fallback": null
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "id": "k0698b813",
+          "title": "La toma de Cuautla por González 2a. Parte",
+          "link": "https://repositorio.colmex.mx/concern/books/k0698b813"
+        },
+        {
+          "number": 2,
+          "id": "th83m302c",
+          "title": "La toma de Cuautla por Zapata 1a. Parte",
+          "link": "https://repositorio.colmex.mx/concern/books/th83m302c"
+        },
+        {
+          "number": 3,
+          "id": "hq37vp71n",
+          "title": "Exigen que peritos externos exhumen cuerpos de fosas ilegales en Cuautla",
+          "link": "https://repositorio.colmex.mx/concern/press_releases/hq37vp71n"
+        },
+        {
+          "number": 4,
+          "id": "g158bj17c",
+          "title": "Reglamento de panteones para el municipio de Cuautla, Morelos",
+          "link": "https://repositorio.colmex.mx/concern/legislations/g158bj17c"
+        },
+        {
+          "number": 5,
+          "id": "pc289n06w",
+          "title": "Denunciante de fosas clandestinas en Cuautla señala intento de sobornarla",
+          "link": "https://repositorio.colmex.mx/concern/press_releases/pc289n06w"
+        }
+      ],
+      "records": [
+        {
+          "id": "k0698b813",
+          "title": "La toma de Cuautla por González 2a. Parte",
+          "descriptionAvailable": true,
+          "publisherAvailable": true
+        },
+        {
+          "id": "th83m302c",
+          "title": "La toma de Cuautla por Zapata 1a. Parte",
+          "descriptionAvailable": true,
+          "publisherAvailable": true
+        },
+        {
+          "id": "hq37vp71n",
+          "title": "Exigen que peritos externos exhumen cuerpos de fosas ilegales en Cuautla",
+          "descriptionAvailable": false,
+          "publisherAvailable": false
+        },
+        {
+          "id": "g158bj17c",
+          "title": "Reglamento de panteones para el municipio de Cuautla, Morelos",
+          "descriptionAvailable": false,
+          "publisherAvailable": false
+        },
+        {
+          "id": "pc289n06w",
+          "title": "Denunciante de fosas clandestinas en Cuautla señala intento de sobornarla",
+          "descriptionAvailable": false,
+          "publisherAvailable": false
+        }
+      ]
+    },
+    {
+      "check": "Boolean AND",
+      "total": 0,
+      "source": "https://repositorio.colmex.mx/catalog?search_field=advanced&op=AND&sort=score+desc%2C+system_create_dtsi+desc&creator=Paz%2C+Octavio&title=historia&page=1&per_page=5"
+    },
+    {
+      "check": "Boolean OR",
+      "total": 677,
+      "source": "https://repositorio.colmex.mx/catalog?search_field=advanced&op=OR&sort=score+desc%2C+system_create_dtsi+desc&creator=Paz%2C+Octavio&title=historia&page=1&per_page=5"
+    },
+    {
+      "check": "Record link",
+      "title": "La toma de Cuautla por González 2a. Parte",
+      "url": "https://repositorio.colmex.mx/concern/books/k0698b813",
+      "status": 200
+    },
+    {
+      "check": "Record link",
+      "title": "La toma de Cuautla por Zapata 1a. Parte",
+      "url": "https://repositorio.colmex.mx/concern/books/th83m302c",
+      "status": 200
+    },
+    {
+      "check": "Record link",
+      "title": "Exigen que peritos externos exhumen cuerpos de fosas ilegales en Cuautla",
+      "url": "https://repositorio.colmex.mx/concern/press_releases/hq37vp71n",
+      "status": 200
+    },
+    {
+      "check": "Record link",
+      "title": "Reglamento de panteones para el municipio de Cuautla, Morelos",
+      "url": "https://repositorio.colmex.mx/concern/legislations/g158bj17c",
+      "status": 200
+    },
+    {
+      "check": "Record link",
+      "title": "Denunciante de fosas clandestinas en Cuautla señala intento de sobornarla",
+      "url": "https://repositorio.colmex.mx/concern/press_releases/pc289n06w",
+      "status": 200
+    }
+  ],
+  "browser": {
+    "query": "Cuautla",
+    "initialRecords": 5,
+    "afterMore": 10,
+    "fullExportRecords": 147,
+    "uniqueRecordLinks": 147,
+    "txtBytes": 341504,
+    "metadataAccordion": true,
+    "similarWarning": true,
+    "removedMoreInformationButton": true,
+    "scrollYAfterNewAnswer": 0
+  },
+  "observedLimitations": [
+    "An initial English response used Spanish and untranslated search terms; language-first planning and Spanish concept expansion corrected the retested example.",
+    "An initial passage query and metadata-quality request returned capability statements without retrieval; retested examples performed catalog searches.",
+    "A quality response was truncated; output/thinking bounds were adjusted and retesting completed.",
+    "Generated diagnostic wording still sometimes overstates completeness or interprets an ambiguous date too strongly. Citations and source metadata require human evaluation; this is not a definitive metadata audit."
+  ],
+  "institutionalValidationPending": [
+    "Cataloger review of field meanings and schema ambiguities",
+    "Docker/Node24 and repository reverse-proxy staging validation",
+    "Traffic/load, institutional privacy/disclosure and acceptance tests",
+    "Full-text access assessment"
+  ]
+}

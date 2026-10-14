@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-14",
+  "automatedTestsPassed": 29,
+  "indigenousPeoples": {
+    "status": 200,
+    "total": 280,
+    "groups": [
+      {
+        "label": "Video Trópico Sur",
+        "matches": 140
+      },
+      {
+        "label": "Cartillas indígenas ILV",
+        "matches": 81
+      }
+    ],
+    "scopedStatus": 200,
+    "scopedTotal": 81
+  },
+  "revolution": {
+    "total": 907,
+    "groups": [
+      {
+        "label": "Zapata vive",
+        "matches": 510
+      },
+      {
+        "label": "Veteranos Zapatistas",
+        "matches": 429
+      },
+      {
+        "label": "Corridos mexicanos",
+        "matches": 108
+      }
+    ],
+    "diverseExamplesInclude": [
+      "Artículo en revista COLMEX",
+      "Documento archivístico",
+      "Libro",
+      "Tesis de Maestría"
+    ]
+  },
+  "precisePublicationRetest": {
+    "question": "Quiero consultar el periódico Madera.",
+    "status": 200,
+    "overview": false,
+    "field": "title",
+    "firstTitles": [
+      "Periodico Madera",
+      "Madera : periódico clandestino"
+    ]
+  },
+  "limits": [
+    "Facet lists and representative sampling are bounded; this is not exhaustive coverage.",
+    "Groups may overlap; multi-query counts are not added.",
+    "Source catalog matches can include weaker topical matches; diversity penalizes lower relevance ranks.",
+    "The local preview needs a running Node process."
+  ]
+}

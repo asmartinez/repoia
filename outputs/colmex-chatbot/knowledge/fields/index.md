@@ -1,0 +1,199 @@
+# Campos
+
+- [Grado Académico](academic_degree.md) — `academic_degree`
+- [Título alterno](alternate_title.md) — `alternate_title`
+- [Númeración o designación alternativa](alternative_numeric_and_or_alphabethic_designation.md) — `alternative_numeric_and_or_alphabethic_designation`
+- [Análisis](analysis_of_work.md) — `analysis_of_work`
+- [Secretario](assistant.md) — `assistant`
+- [Identificador del autor](author_identifier.md) — `author_identifier`
+- [Premios/Reconocimientos](awards.md) — `awards`
+- [based_near](based_near.md) — `based_near`
+- [Inicio del hecho](beginning.md) — `beginning`
+- [bibliographic_citation](bibliographic_citation.md) — `bibliographic_citation`
+- [Centro](center.md) — `center`
+- [Clasificación de la biblioteca](classification.md) — `classification`
+- [Autor congreso](collective_agent.md) — `collective_agent`
+- [Título colectivo](collective_title.md) — `collective_title`
+- [Repositorio](collector_collective_agent.md) — `collector_collective_agent`
+- [Reseñista/Comentarista](commentator.md) — `commentator`
+- [Compilador](compiler.md) — `compiler`
+- [Quejoso (víctima y ofendido)](complainant.md) — `complainant`
+- [Documentos complementarios](complemented_by_work.md) — `complemented_by_work`
+- [Publicado en](contained_in.md) — `contained_in`
+- [Representante legal, defensor, etc.](contestee.md) — `contestee`
+- [Colaborador](contributor.md) — `contributor`
+- [contributor_conacyt](contributor_conacyt.md) — `contributor_conacyt`
+- [Copyright](copyright.md) — `copyright`
+- [Autor corporativo](corporate_body.md) — `corporate_body`
+- [Autor](creator.md) — `creator`
+- [creator_conacyt](creator_conacyt.md) — `creator_conacyt`
+- [SEAES](criterio_seaes.md) — `criterio_seaes`
+- [Entidad que aporta el recurso](curator_collective_agent_of.md) — `curator_collective_agent_of`
+- [Custodio](custodian_agent_of.md) — `custodian_agent_of`
+- [Tipo de datos](data_type.md) — `data_type`
+- [Año](date_created.md) — `date_created`
+- [date_modified](date_modified.md) — `date_modified`
+- [Fecha](date_of_manifestation.md) — `date_of_manifestation`
+- [Fecha de presentación de la tesis](date_of_presentation_of_the_thesis.md) — `date_of_presentation_of_the_thesis`
+- [date_uploaded](date_uploaded.md) — `date_uploaded`
+- [Grado](degree_program.md) — `degree_program`
+- [Depositante](depositor.md) — `depositor`
+- [Agente depositario](depository_agent.md) — `depository_agent`
+- [Organismo depositante](depository_collective_agent_of.md) — `depository_collective_agent_of`
+- [Resumen](description.md) — `description`
+- [digital_file_characteristics](digital_file_characteristics.md) — `digital_file_characteristics`
+- [Datos geoespaciales](digital_representation_of_cartographic_content.md) — `digital_representation_of_cartographic_content`
+- [Información de generación de recursos digitales](digital_resource_generation_information.md) — `digital_resource_generation_information`
+- [Dimensiones](dimensions.md) — `dimensions`
+- [Dimensiones de la fotografía](dimensions_of_still_image.md) — `dimensions_of_still_image`
+- [Director](director.md) — `director`
+- [doi](doi.md) — `doi`
+- [Dibujante](draftsman.md) — `draftsman`
+- [Edición](edition.md) — `edition`
+- [Editor](editor.md) — `editor`
+- [Instancia emisora, pleno o sala](enacting_juridiction_of.md) — `enacting_juridiction_of`
+- [Detalles de codificación del formato](encoding_format_details.md) — `encoding_format_details`
+- [Fin del hecho](ending.md) — `ending`
+- [extension](extension.md) — `extension`
+- [Detalles del tipo de archivo](file_type_details.md) — `file_type_details`
+- [Información de financiamiento](funding_information.md) — `funding_information`
+- [Género o forma](gender_or_form.md) — `gender_or_form`
+- [Cobertura geográfica](geographic_coverage.md) — `geographic_coverage`
+- [Protocolo o guia](guide_to_work.md) — `guide_to_work`
+- [handle](handle.md) — `handle`
+- [Tipo de portador](has_carrier_type.md) — `has_carrier_type`
+- [Categoría de obra](has_category_of_work.md) — `has_category_of_work`
+- [Responsable de la conceptualización](has_conceptualization_contributor.md) — `has_conceptualization_contributor`
+- [Contacto](has_contact_information.md) — `has_contact_information`
+- [Creador](has_creator.md) — `has_creator`
+- [Curador de datos](has_data_curation_contributor.md) — `has_data_curation_contributor`
+- [Institución que otorga el grado](has_degree_granting_institution.md) — `has_degree_granting_institution`
+- [Versión](has_designation_of_version.md) — `has_designation_of_version`
+- [Función](has_field_activity_of_agent.md) — `has_field_activity_of_agent`
+- [Responsable del análisis formal](has_formal_analysis_contributor.md) — `has_formal_analysis_contributor`
+- [Responsable de la captación de fondos](has_funding_acquisition_contributor.md) — `has_funding_acquisition_contributor`
+- [Número de expediente o caso](has_identifier_for_item.md) — `has_identifier_for_item`
+- [Investigador](has_investigation_contributor.md) — `has_investigation_contributor`
+- [Medio de interpretación de contenido musical](has_medium_of_performance_of_musical_content.md) — `has_medium_of_performance_of_musical_content`
+- [Responsable del desarrollo de la metodología](has_methodology_contributor.md) — `has_methodology_contributor`
+- [Conferencia/Evento](has_organizer_corporate_body.md) — `has_organizer_corporate_body`
+- [Sus miembros son:](has_person_member_of_collective_agent.md) — `has_person_member_of_collective_agent`
+- [Administrador del proyecto](has_project_administration_contributor.md) — `has_project_administration_contributor`
+- [Responsable del suministro de recursos](has_resources_contributor.md) — `has_resources_contributor`
+- [Responsable del desarrollo de software](has_software_contributor.md) — `has_software_contributor`
+- [Supervisor](has_supervision_contributor.md) — `has_supervision_contributor`
+- [Colección](has_system_of_organization.md) — `has_system_of_organization`
+- [Transformación al genero o forma](has_transformation_by_genre.md) — `has_transformation_by_genre`
+- [Responsable de la validación](has_validation_contributor.md) — `has_validation_contributor`
+- [Responsable de la visualización](has_visualization_contributor.md) — `has_visualization_contributor`
+- [Redactor](has_writing_original_draft_contributor.md) — `has_writing_original_draft_contributor`
+- [Revisor y edición](has_writing_review_editing_contributor.md) — `has_writing_review_editing_contributor`
+- [Instancia subordinada](hierarchical_inferior.md) — `hierarchical_inferior`
+- [Instancia superior](hierarchical_superior.md) — `hierarchical_superior`
+- [Identificador](identifier.md) — `identifier`
+- [Identificador específico](identifier_of_work.md) — `identifier_of_work`
+- [import_url](import_url.md) — `import_url`
+- [Institución](institution.md) — `institution`
+- [Entrevistador](interviewee.md) — `interviewee`
+- [Entrevistado](interviewer.md) — `interviewer`
+- [Compositor](is_composer_person_of.md) — `is_composer_person_of`
+- [Organismo acusado o demandado](is_criminal_defendant_corporate_body_of.md) — `is_criminal_defendant_corporate_body_of`
+- [Persona acusada o demandada](is_criminal_defendant_person_of.md) — `is_criminal_defendant_person_of`
+- [Danzante](is_dancer_agent_of.md) — `is_dancer_agent_of`
+- [Facsímil de](is_facsimile_of_manifestation_of.md) — `is_facsimile_of_manifestation_of`
+- [Instrumento de descripción archivística](is_finding_aid_for.md) — `is_finding_aid_for`
+- [Programa de estudios](is_graduate_of.md) — `is_graduate_of`
+- [Instrumentista](is_instrumentalist_agent_of.md) — `is_instrumentalist_agent_of`
+- [Autor de la letra](is_lyricist_person_of.md) — `is_lyricist_person_of`
+- [Sección o suplemento](is_part_or_work.md) — `is_part_or_work`
+- [Ejecutante](is_performer_agent_of.md) — `is_performer_agent_of`
+- [Es miembro de:](is_person_member_of_collective_agent.md) — `is_person_member_of_collective_agent`
+- [Intérprete](is_singer_agent_of.md) — `is_singer_agent_of`
+- [Subcolección temática](is_subcollection_of.md) — `is_subcollection_of`
+- [Asunto](is_title_of_item_of.md) — `is_title_of_item_of`
+- [Genero o forma](is_transformation_by_genre.md) — `is_transformation_by_genre`
+- [isbn](isbn.md) — `isbn`
+- [ISSN](issn.md) — `issn`
+- [Restricción de acceso del ítem](item_access_restrictions.md) — `item_access_restrictions`
+- [Restricción de uso del ítem](item_use_restrictions.md) — `item_use_restrictions`
+- [SEAES Justificación](justificacion_seaes.md) — `justificacion_seaes`
+- [Palabras clave](keyword.md) — `keyword`
+- [label](label.md) — `label`
+- [Idioma](language.md) — `language`
+- [Nota de idioma](language_of_expression.md) — `language_of_expression`
+- [Licencia](license.md) — `license`
+- [Identificador institucional](local_resource_identifier.md) — `local_resource_identifier`
+- [Coordenadas](longitud_and_latitud.md) — `longitud_and_latitud`
+- [manifestation_access_restrictions](manifestation_access_restrictions.md) — `manifestation_access_restrictions`
+- [manifestation_use_restrictions](manifestation_use_restrictions.md) — `manifestation_use_restrictions`
+- [Modo de publicación](mode_of_issuance.md) — `mode_of_issuance`
+- [Narrador](narrator.md) — `narrator`
+- [Naturaleza del contenido](nature_of_content.md) — `nature_of_content`
+- [Fecha del suceso](note_of_timespan.md) — `note_of_timespan`
+- [Nota sobre declaración de responsabilidad](note_on_statement_of_responsibility.md) — `note_on_statement_of_responsibility`
+- [Notas](notes.md) — `notes`
+- [Número](number.md) — `number`
+- [Número de la parte](numbering_of_part.md) — `numbering_of_part`
+- [Volumen/número](numbering_within_sequence.md) — `numbering_within_sequence`
+- [Organizador](organizer.md) — `organizer`
+- [Autor congreso o reunión](organizer_collective_agent.md) — `organizer_collective_agent`
+- [Otras personas relacionadas](other_related_persons.md) — `other_related_persons`
+- [Otro título](other_title.md) — `other_title`
+- [Propietario](owner_agent_of.md) — `owner_agent_of`
+- [Ciudad/Municipio/Localidad](part_of_place.md) — `part_of_place`
+- [period](period.md) — `period`
+- [Epoca](period_of_activity_of_corporate_body.md) — `period_of_activity_of_corporate_body`
+- [Fotógrafo](photographer.md) — `photographer`
+- [Agencia fotográfica](photographer_corporate_body_of_work.md) — `photographer_corporate_body_of_work`
+- [Lugar de publicación](place_of_publication.md) — `place_of_publication`
+- [Precedentes](preceded_by_work.md) — `preceded_by_work`
+- [Materia](primary_topic.md) — `primary_topic`
+- [Medio de producción](production_method.md) — `production_method`
+- [Proyecto](project.md) — `project`
+- [Procedencia](provenance.md) — `provenance`
+- [pub_conacyt](pub_conacyt.md) — `pub_conacyt`
+- [Editorial](publisher.md) — `publisher`
+- [Organización relacionada](related_corporate_body_of_timespan.md) — `related_corporate_body_of_timespan`
+- [Familia relacionada](related_family_timespan.md) — `related_family_timespan`
+- [Persona relacionada o tercero interesado](related_person_of.md) — `related_person_of`
+- [Lugar del hecho criminal](related_place_of_timespan.md) — `related_place_of_timespan`
+- [URL](related_url.md) — `related_url`
+- [Documento relacionado](related_work_of_work.md) — `related_work_of_work`
+- [relative_path](relative_path.md) — `relative_path`
+- [Investigador](researcher_agent_of.md) — `researcher_agent_of`
+- [resource_access_restrictions](resource_access_restrictions.md) — `resource_access_restrictions`
+- [Tipo de documento](resource_type.md) — `resource_type`
+- [resource_use_restrictions](resource_use_restrictions.md) — `resource_use_restrictions`
+- [Declaración de responsabilidad](responsibility_statement.md) — `responsibility_statement`
+- [Lector/Revisor](reviewer.md) — `reviewer`
+- [Declaración de derechos](rights_statement.md) — `rights_statement`
+- [Escala](scale.md) — `scale`
+- [Fuente](source.md) — `source`
+- [Conferencista/ponente](speaker_agent_of.md) — `speaker_agent_of`
+- [Tema](subject.md) — `subject`
+- [subject_conacyt](subject_conacyt.md) — `subject_conacyt`
+- [Tema organismo](subject_corporate.md) — `subject_corporate`
+- [Tema familia](subject_family.md) — `subject_family`
+- [Tema persona](subject_person.md) — `subject_person`
+- [Tema del hecho criminal](subject_timespan.md) — `subject_timespan`
+- [Título uniforme u original](subject_uniform_title.md) — `subject_uniform_title`
+- [Tema obra](subject_work.md) — `subject_work`
+- [Resumen del proyecto](summary_of_work.md) — `summary_of_work`
+- [Bibliografía](supplementary_content_or_bibliography.md) — `supplementary_content_or_bibliography`
+- [Requerimientos de sistema](system_requirements.md) — `system_requirements`
+- [Contenido](table_of_contents.md) — `table_of_contents`
+- [Cobertura temporal](temporary_coverage.md) — `temporary_coverage`
+- [Coleción Temática](thematic_collection.md) — `thematic_collection`
+- [Descripción de hechos](timespan_described_in.md) — `timespan_described_in`
+- [Título](title.md) — `title`
+- [Serie](title_of_series.md) — `title_of_series`
+- [Traductor](translator.md) — `translator`
+- [type_conacyt](type_conacyt.md) — `type_conacyt`
+- [type_of_content](type_of_content.md) — `type_of_content`
+- [Tipo de ilustraciones](type_of_illustrations.md) — `type_of_illustrations`
+- [Tipo de tesis](type_of_thesis.md) — `type_of_thesis`
+- [Características del archivo digital](video_characteristic.md) — `video_characteristic`
+- [Formato del video](video_format.md) — `video_format`
+- [Volumen](volume.md) — `volume`
+- [Testigo](witness.md) — `witness`
+- [Prologuista](writer_of_suplementary_textual_content.md) — `writer_of_suplementary_textual_content`

@@ -1,0 +1,11 @@
+# Validation — OKF upgrade, 2026-10-09
+
+26 automated regression tests passed on Node 26. These cover query compilation, explicit-constraint preservation, facets/ranges/sort across pagination and export, deduplication, separate union counts, permitted citation IDs, OKF inventory/framing, signed record follow-up context, exclusions of operational metadata, and existing HTTP/CSRF/quota/upstream protections. Tests validate implementation contracts; they do not certify semantic correctness of generated answers.
+
+Live checks are in OKF-LIVE-VALIDATION.json. Broad migration plus a publication range returned 194 records. Migration AND remittances with the same range returned 6. Octavio Paz author retrieval returned 3 catalog creator matches; this does not certify original literary authorship of every component. French planning translated migration to migración; the English dancers example responded in English after correction. A nonexistent exact phrase was searched and returned zero without claiming verified page access. Comparing migration and remittances used separate queries and did not sum totals. Five representative book, press-release and legislation links returned HTTP 200. Counts are dated observations, not hardcoded constants.
+
+Browser verification: metadata accordion and related-list warning, removed Más información, new-answer scroll at top, append 5 to 10 results, then export all 147 Cuautla matches. Download contained 147 unique canonical record links, UTF-8 text and no object placeholders/context signatures/broken catalog-show URLs.
+
+During development, language drift, missed retrieval and truncated output were found and addressed. Diagnostic prose can still overstate field completeness or the meaning of an ambiguous date, despite factual availability checks and prompts. Cataloger evaluation of representative answers remains required. Descriptive metadata may be abbreviated and does not equal full-text evidence. No repository records were edited.
+
+Docker is unavailable on this workstation; the updated Dockerfile includes the knowledge bundle but its image and institutional proxy configuration have not been executed in this phase. Node24 staging, institutional hosting, load acceptance, privacy disclosures and cataloger review remain pending. No public deployment was performed.

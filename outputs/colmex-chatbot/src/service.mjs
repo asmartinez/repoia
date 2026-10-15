@@ -1,4 +1,5 @@
-import {planSearch,answerFromRecords} from './gemini.mjs';
+import {planSearch,answerFromRecords,translateFacetMessages} from './gemini.mjs';
+import {facetValues,facetText} from './facets.mjs';
 import {catalog,statistics} from './repository.mjs';
 import {discoveryOverview} from './discovery.mjs';
 import {validateSpec,relaxedSpec} from './search-spec.mjs';
@@ -46,6 +47,22 @@ async function nextBatch(p,perPage){
  return {records:d.records.filter(r=>r.id!==p.excludeId),queue,total:p.total,query:p.query,searchEvidence:p.searchEvidence,language:p.language};
 }
 function citations(answer,records){return (answer.citationIds||[]).map((id,i)=>{const r=records.find(r=>r.id===id);return r?{number:i+1,id,title:r.title,link:r.link}:null;}).filter(Boolean);}
+async function facetResponse(info,plan,session){
+ const nextPlan={facetField:info.field||plan.facetField,scope:info.scope,searches:info.spec?[info.spec]:[],facetLimit:info.limit,facetOrder:info.sort};
+ const {directory,next,spec,...facetInfo}=info;
+ const cursor=next?sign({kind:'facets',plan:nextPlan,position:next,language:plan.language,expires:Date.now()+600000},session,'cursor'):undefined;
+ let text=facetText(info,plan.language);
+ if(!['en','es','fr'].includes(plan.language.split('-')[0])){
+  const parts=facetText(info,'en').split('\n\n'),messages={heading:info.label?parts[0].replace(info.label,'{label}'):info.status==='not_exposed'?parts[0].replace(info.field,'{field}'):parts[0]};
+  if(['available','no_values_returned'].includes(info.status))Object.assign(messages,{coverage:parts[2],note:parts[3],record:'record',records:'records',...(info.values.length?{}:{empty:parts[1]})});
+  const m=await translateFacetMessages(process.env.GEMINI_API_KEY,process.env.GEMINI_MODEL||'gemini-2.5-flash',plan.language,messages);
+  const heading=m.heading.replace('{label}',()=>info.label).replace('{field}',()=>info.field);
+  if(info.status==='directory')text=heading+'\n\n'+parts[1];
+  else if(info.status==='not_exposed')text=heading;
+  else text=[heading,info.values.length?info.values.map((v,i)=>`${info.offset+i+1}. ${v.value}: ${v.hits} ${v.hits===1?m.record:m.records}`).join('\n'):m.empty,m.coverage,m.note].join('\n\n');
+ }
+ return {text,groundingStatus:info.status==='not_exposed'?'partial':'supported',records:[],language:plan.language,source:info.source,facetInfo,cursor,retrievedAt:info.retrievedAt};
+}
 export async function ask(d,session,options={}){
  const input=validateRequest(d),available=known(session),selected=verifiedSelection(d,session)||available.find(b=>b.id===d.selectedId)||null;
  const books=[];let contextSize=0;for(const b of available){const size=JSON.stringify(b).length;if(contextSize+size<=24000){books.push(b);contextSize+=size;}}
@@ -53,6 +70,7 @@ export async function ask(d,session,options={}){
  const key=process.env.GEMINI_API_KEY,model=process.env.GEMINI_MODEL||'gemini-2.5-flash';
  if(d.cursor){
   const p=unpack(d.cursor,session,'cursor');
+  if(p.kind==='facets')return facetResponse(await facetValues(p.plan,p.position),{...p.plan,language:p.language},session);
   // Accept cursors from the preceding version until they expire.
   if(!p.queue)p.queue=[{query:p.query,field:p.field,page:p.page}];
   const r=await nextBatch(p,5);remember(session,r.records);
@@ -64,11 +82,20 @@ export async function ask(d,session,options={}){
  if(selected&&!books.some(b=>b.id===selected.id))books.unshift(selected);
  let groupSelection;
  if(d.groupToken){groupSelection=unpack(d.groupToken,session,'group');input.message=groupSelection.question+'\nGrupo elegido: '+groupSelection.label;}
- const plan=groupSelection?{action:'search',searches:groupSelection.specs.map(validateSpec),query:'',field:'all_fields',bookId:'',language:groupSelection.language,explore:false}:await planSearch(key,model,{...input,selected,books,requireRetrieval:options.requireRetrieval===true});
- const retrievalAction=['search','synthesis','similar','about','metadata','repository_stats'].includes(plan.action);
+ let plan=groupSelection?{action:'search',searches:groupSelection.specs.map(validateSpec),query:'',field:'all_fields',bookId:'',language:groupSelection.language,explore:false}:await planSearch(key,model,{...input,selected,books,requireRetrieval:options.requireRetrieval===true});
+ const retrievalAction=['search','synthesis','similar','about','metadata','repository_stats','facet_values'].includes(plan.action);
  if(!retrievalAction&&(plan.needsRepository===true||options.requireRetrieval)){
   if(options.requireRetrieval)throw new AppError('invalid_plan');
   return ask(d,session,{requireRetrieval:true});
+ }
+ if(plan.action==='facet_values'){
+  let info=await facetValues(plan);
+  if(info.status==='not_exposed'){
+   const resolved=await planSearch(key,model,{...input,selected:null,books:[],requireFacet:true,facetDirectory:info.directory,facetToResolve:plan.facetField});
+   plan={...plan,facetField:resolved.facetField||plan.facetField};
+   info=await facetValues(plan);
+  }
+  return facetResponse(info,plan,session);
  }
  if(plan.action==='repository_stats'){
   const stat=await statistics(plan);let text=stat.text;

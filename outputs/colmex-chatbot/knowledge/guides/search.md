@@ -50,3 +50,14 @@ Conteos: use el total del catálogo de una consulta concreta; mantenga su filtro
 Para preguntas temáticas amplias, el servidor puede consultar facetas de colecciones temáticas y tipos documentales, verificar sus conteos dentro de las consultas originales y seleccionar ejemplos variados. No use agrupación para títulos conocidos, búsquedas de autoría o conjuntos nombrados explícitamente. Las etiquetas temáticas son datos de catálogo, no una prueba de pertenencia a una colección formal. No infiera grupos por semejanza de títulos.
 
 Los grupos pueden solaparse y las facetas estar truncadas. No sume sus conteos, no confunda coincidencias temáticas con tamaño total de una colección ni trate la muestra como representación exhaustiva de posturas. La diversidad se equilibra con el orden de relevancia. Explorar un grupo conserva las condiciones originales; paginación y exportación mantienen el filtro.
+
+
+## Valores de campos y facetas públicas — 2026-10-15
+
+Para enumerar valores de un campo o comparar sus frecuencias, use facet_values. El servidor descubre las facetas anunciadas por la respuesta pública de /catalog.json y obtiene páginas de /catalog/facet/NOMBRE.json. Esta capacidad no se limita a autoría y temas: puede usar cualquier faceta pública anunciada, según su significado. No busque el nombre del campo, «cualquier valor» ni un comodín como si fueran temas de documentos. Un campo buscable no necesariamente tiene una faceta pública.
+
+Conserve las condiciones, el tipo documental, filtros y fechas en una sola consulta; no sustituya un ranking filtrado por uno global ni una faceta por otra de distinto significado. Si se solicita una lista de facetas disponibles, consulte el directorio público observado. Si falta una faceta, explique la limitación de esta vía de consulta; no infiera que falta el metadato.
+
+Las páginas verificadas conservan valores y conteos literales, sin fusionar mayúsculas, espacios u otras variantes de nombres. Los conteos son registros dentro de la consulta, no entidades normalizadas ni un total sumable entre valores multivaluados. Se distingue una lista parcial del final de los valores expuestos. El botón Más valores conserva la consulta y añade resultados. Los cambios del catálogo durante la paginación pueden alterar el orden o los conteos.
+
+Fuentes verificadas: https://repositorio.colmex.mx/catalog.json?per_page=5 y https://repositorio.colmex.mx/catalog/facet/publisher_sim.json?facet.page=1 (respuesta JSON con items, limit, offset y sort).

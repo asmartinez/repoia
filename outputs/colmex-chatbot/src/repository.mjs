@@ -17,10 +17,10 @@ export function normalizeRecord(d){
   record.metadataTruncated=true;
  }return record;
 }
-export async function catalog(query='',{page=1,field='all_fields',scope='all',perPage=5,spec}={}){
- if(typeof query!=='string'||query.length>300||!Number.isInteger(page)||page<1||page>1000||![5,30,100].includes(perPage)||(!spec&&!['title','all_fields'].includes(field)))throw new AppError('invalid',400);
- const params=spec?compileSpec(spec):new URLSearchParams({q:query,search_field:field});params.set('page',String(page));params.set('per_page',String(perPage));if(scope!=='all')params.set('f[human_readable_type_sim][]',scope);
- const url=`${ROOT}/catalog.json?${params}`,cached=cache.get(url);if(cached&&cached.expires>Date.now())return cached.data;
+export async function publicCatalogJSON(path,{maxBytes=2000000}={}){
+ if(!/^\/catalog(?:\.json\?|\/facet\/[a-z][a-z0-9_]{0,180}\.json\?)/.test(path))throw new AppError('invalid',400);
+ const url=ROOT+path;
+ const cached=cache.get(url);if(cached&&cached.expires>Date.now())return cached.data;
  if(Date.now()<blockedUntil)throw new AppError('repository_blocked');
  let response;
  for(let attempt=0;attempt<2;attempt++){
@@ -29,12 +29,19 @@ export async function catalog(query='',{page=1,field='all_fields',scope='all',pe
   if(response.ok)break;if(response.status>=500&&attempt===0)continue;throw new AppError('repository');
  }
  if(!response.headers.get('content-type')?.includes('application/json')){blockedUntil=Date.now()+60000;throw new AppError('repository_blocked');}
- const raw=await response.text();if(raw.length>(perPage===100?12000000:2000000))throw new AppError('repository');
- let d;try{d=JSON.parse(raw).response;}catch{throw new AppError('repository');}
+ const raw=await response.text();if(raw.length>(maxBytes))throw new AppError('repository');
+ let d;try{d=JSON.parse(raw);}catch{throw new AppError('repository');}
+ if(!d||typeof d!=='object'||!d.response||typeof d.response!=='object')throw new AppError('repository');
+ if(cache.size>=100)cache.delete(cache.keys().next().value);cache.set(url,{expires:Date.now()+60000,data:d});return d;
+}
+export async function catalog(query='',{page=1,field='all_fields',scope='all',perPage=5,spec}={}){
+ if(typeof query!=='string'||query.length>300||!Number.isInteger(page)||page<1||page>1000||![5,30,100].includes(perPage)||(!spec&&!['title','all_fields'].includes(field)))throw new AppError('invalid',400);
+ const params=spec?compileSpec(spec):new URLSearchParams({q:query,search_field:field});params.set('page',String(page));params.set('per_page',String(perPage));if(scope!=='all')params.set('f[human_readable_type_sim][]',scope);
+ const d=(await publicCatalogJSON('/catalog.json?'+params,{maxBytes:perPage===100?12000000:2000000})).response;
  if(!Array.isArray(d?.docs)||!Number.isSafeInteger(d?.pages?.total_count)||d.pages.total_count<0)throw new AppError('repository');
  const next=d.pages.next_page;if(next!==null&&next!==undefined&&(!Number.isInteger(next)||next<=page))throw new AppError('repository');
  const data={records:d.docs.map(normalizeRecord),total:d.pages.total_count,nextPage:next||null,query,field,scope,page,spec,source:`${ROOT}/catalog?${params}`,facets:Array.isArray(d.facets)?d.facets:[]};
- if(cache.size>=100)cache.delete(cache.keys().next().value);cache.set(url,{expires:Date.now()+60000,data});return data;
+ return data;
 }
 export async function statistics(plan){
  const d=await catalog('',{scope:plan.scope}),label={all:'documentos',Book:'libros',Thesis:'tesis',Article:'artículos','Archival Document':'documentos archivísticos','Press Release':'notas de prensa',Video:'videos'}[plan.scope]||plan.scope;
